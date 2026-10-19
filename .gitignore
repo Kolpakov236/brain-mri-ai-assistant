@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.cache/
+.gradio/
+data
+Epic and CSCR hospital Dataset/
+models/*.pt
+models/*.pth
+*.log
