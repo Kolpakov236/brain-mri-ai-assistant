@@ -8,4 +8,5 @@ data
 Epic and CSCR hospital Dataset/
 models/*.pt
 models/*.pth
+!models/best.pt
 *.log

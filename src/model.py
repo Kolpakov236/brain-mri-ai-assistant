@@ -26,7 +26,7 @@ def save_checkpoint(path: Path, model: nn.Module, arch: str, img_size: int, epoc
 
 def load_checkpoint(path: Path, device: torch.device | str = "cpu") -> tuple[nn.Module, dict]:
     """Загружает модель в eval-режиме и словарь метаданных чекпоинта."""
-    ckpt = torch.load(path, map_location="cpu", weights_only=False)
+    ckpt = torch.load(path, map_location="cpu", weights_only=True)
     model = build_model(ckpt["arch"], pretrained=False)
     model.load_state_dict(ckpt["model"])
     return model.to(device).eval(), ckpt
