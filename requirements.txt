@@ -2,7 +2,7 @@ torch
 torchvision
 timm
 grad-cam
-gradio
+gradio>=6.30,<7
 scikit-learn
 pandas
 numpy
@@ -11,3 +11,4 @@ opencv-python-headless
 matplotlib
 imagehash
 tqdm
+reportlab>=4.0,<5

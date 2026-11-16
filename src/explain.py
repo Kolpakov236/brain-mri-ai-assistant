@@ -40,6 +40,8 @@ class Explanation:
 
 def largest_component(cam: np.ndarray, threshold: float) -> tuple[np.ndarray, tuple[int, int, int, int] | None]:
     """Бинарная маска по порогу (доля от максимума) и наибольшая связная компонента с её рамкой."""
+    if not np.isfinite(cam).all() or cam.max() <= 1e-8:
+        return np.zeros_like(cam, dtype=bool), None
     binary = (cam >= threshold * cam.max()).astype(np.uint8)
     n, labels, stats, _ = cv2.connectedComponentsWithStats(binary, connectivity=8)
     if n <= 1:

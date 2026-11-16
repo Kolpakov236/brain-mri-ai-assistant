@@ -10,3 +10,5 @@ models/*.pt
 models/*.pth
 !models/best.pt
 *.log
+
+.review_exports/
